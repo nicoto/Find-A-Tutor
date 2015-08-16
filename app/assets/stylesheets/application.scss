@@ -17,8 +17,6 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-<<<<<<< HEAD
-
 .bg-b {background-color: #4a90e2;}
 
 .bg-g {background-color: #dddddd}
@@ -36,7 +34,7 @@
 .h {height: 140px}
 
 .w {width: 354px}
-=======
+
  $red:"#EB9693";
  $blue:"#EB9693";
 
@@ -47,21 +45,5 @@
 
 body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  width: 100%;
-  min-height: 375px;
-  height: 100%;
-  background-color: white;
 }
-
-.wrapper {
-  width: 126px;
-  height: 375px;
-}
-
-header {
-  width: 126px;
-  height: 96px;
-  background-color: $blue;
-}
->>>>>>> 01bd8c0a2787c0cd38715dc96576d846d1e3a34e
 
