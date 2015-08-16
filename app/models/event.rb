@@ -20,9 +20,12 @@ class Event < ActiveRecord::Base
   include Taggable
 
 
-  has_and_belongs_to_many :user, join_table: "happenings"
+  # has_and_belongs_to_many :user, join_table: "happenings"
   belongs_to :location
   belongs_to :subject
   belongs_to :group
   has_many :comments
+  has_many :happenings
+  has_many :users, through: :happenings, source: :user
+  belongs_to :user
 end

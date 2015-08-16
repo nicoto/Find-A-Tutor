@@ -4,10 +4,10 @@
 <h5><%= @event.time_start %></h5><br>
 <h5><%= @event.time_end %></h5><br>
 <h5><%= @event.description %></h5><br>
-<h5><%= @event.subject_id %></h5><br>
-<h5><%= @event.user_id %></h5><br>
-<h5><%= @event.location_id %></h5><br>
-<h5><%= @event.group_id %></h5><br>
+<h5><%= @event.subject.name %></h5><br>
+<h5><%= @event.user.first_name %> <%= @event.user.last_name %></h5><br>
+<h5><%= @event.location.street %></h5><br>
+<h5><%= @event.group.name %></h5><br>
 
 
 
