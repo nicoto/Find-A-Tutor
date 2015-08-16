@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   get 'events/search', to: 'events#search'
   resources :events, except: [:destroy]
+  resources :users
 
 end
