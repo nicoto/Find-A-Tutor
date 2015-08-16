@@ -12,7 +12,7 @@
                last_name: Faker::Name.last_name,
                username: Faker::Internet.user_name,
                email: Faker::Internet.email,
-               password_hash: 'test',
+               password: 'test',
                role: 1,
                grade: Faker::Lorem.word,
                school: Faker::Lorem.word
@@ -23,7 +23,7 @@ end
                last_name: Faker::Name.last_name,
                username: Faker::Internet.user_name,
                email: Faker::Internet.email,
-               password_hash: 'test',
+               password: 'test',
                role: 0,
                grade: Faker::Lorem.word,
                school: Faker::Lorem.word
