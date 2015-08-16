@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 20150815232403) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username"
+    t.string   "email"
     t.string   "password_hash"
     t.integer  "role"
     t.string   "grade"
