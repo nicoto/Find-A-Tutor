@@ -1,3 +1,10 @@
-<h1>All events</h1>
+<h1>ALL THE EVENTS ARE HERE MUHHHHH</h1>
 
-<%= render @events %>
+<br>
+<%= link_to "New Event", new_event_path, class:"btn btn-primary"  %>
+<br>
+
+<% @events.each do |event| %>
+  <h2><%= link_to event.name, event_path(event)%></h2>
+  <%= link_to 'Edit', edit_event_path(event.id), class:"btn btn-primary"  %> | <%= link_to 'Delete', event_path(event.id), class:"btn btn-primary", method: :delete, data: {confirm: 'Are you sure?'} %><br>
+<% end %>
