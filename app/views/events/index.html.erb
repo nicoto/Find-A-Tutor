@@ -11,7 +11,8 @@
     <div class='row'>
       <div class='col-xs-9 p-t-l'>
         <p><strong>Venue: </strong><%= event.location.name %></p>
-        <p><strong>Time: </strong><%= event.time_start %></p>
+        <p><strong><%= %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday][event.time_start.wday] %>'s Tutoring Session on <%= event.time_start.to_date %></strong>:</p>
+        <p>From: <strong><%= event.time_start.to_time %></strong> To: <strong><%= event.time_end.to_time %></strong></p>
       </div>
       <div class='col-xs-3 p-r'>
         <span class="glyphicon glyphicon-plus-sign pull-right f-s c-w p-r p-t-l" aria-hidden="true"></span>
