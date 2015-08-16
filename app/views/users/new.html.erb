@@ -1,13 +1,13 @@
 <h2>After-school Tutoring Sign Up</h2>
 <div id="wrapper">
 
-<%= form_for @user do |f| %>
+<%= form_for @user, :url => { :action => "show" } do |f| %>
 <% if @user.errors.any? %>
-<% @user.errors.full_messages.each do |msg| %>
-
-<div class="alert-error"><%= msg %></div>
+  <% @user.errors.full_messages.each do |msg| %>
+    <div class="alert-error"><%= msg %></div>
+  <% end %>
 <% end %>
-<% end %>
+  <%= f.text_field :first_name, class:'form-control', placeholder: 'John' %>
 
 <div>
   <%= f.label :role %>
@@ -42,11 +42,6 @@
 <div>
   <%= f.label :password %>
   <%= f.text_field :password_hash, placeholder: 'X8df!90EO' %><br>
-</div>
-
-<div>
-  <%= f.label :password %>
-  <%= f.text_field :passwordsignup_confirm, placeholder: 'X8df!90EO' %><br>
 </div>
 
 <%= f.submit "Submit" %>

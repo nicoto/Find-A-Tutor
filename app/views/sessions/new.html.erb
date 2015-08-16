@@ -1,7 +1,8 @@
 <h2>After-school Tutoring Sign In</h2>
 <div id="wrapper">
 
-<%= form_for @user do |f| %>
+
+<%= form_for @user, :url => { :action => "create" }, :method => "post" do |f| %>
 <% if @user.errors.any? %>
 <% @user.errors.full_messages.each do |msg| %>
 
@@ -19,7 +20,7 @@
   <%= f.text_field :password_hash, placeholder: 'X8df!90EO' %><br>
 </div>
 
-<%= f.submit "Submit" %>
+<%= f.submit "Sign In" %>
 
 <%= link_to "Cancel", users_path %>
 <% end %>

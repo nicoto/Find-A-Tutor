@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 def new # get form
-  @user.new
+  @user = User.new
 end
 
 def create # post creation
