@@ -39,7 +39,7 @@ def index # list of all
 end
 
 def show # individual
-  @users = User.find(params[:id])
+  @user = User.find(params[:id])
 end
 
 private
