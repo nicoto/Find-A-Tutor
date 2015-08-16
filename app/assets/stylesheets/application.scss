@@ -13,5 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ $red:"#EB9693";
+ $blue:"#EB9693";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  width: 100%;
+  min-height: 375px;
+  height: 100%;
+  background-color: white;
+}
+
+.wrapper {
+  width: 126px;
+  height: 375px;
+}
+
+header {
+  width: 126px;
+  height: 96px;
+  background-color: $blue;
+}
+

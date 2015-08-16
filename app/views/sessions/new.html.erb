@@ -1,0 +1,26 @@
+<h2>After-school Tutoring Sign In</h2>
+<div id="wrapper">
+
+
+<%= form_for @user, :url => { :action => "create" } do |f| %>
+<% if @user.errors.any? %>
+<% @user.errors.full_messages.each do |msg| %>
+
+<div class="alert-error"><%= msg %></div>
+<% end %>
+<% end %>
+
+<div>
+  <%= f.label :username %>
+  <%= f.text_field :username, placeholder: 'jsmith' %><br>
+</div>
+
+<div>
+  <%= f.label :password %>
+  <%= f.text_field :password, placeholder: 'X8df!90EO' %><br>
+</div>
+
+<%= f.submit "Sign In" %>
+
+<%= link_to "Cancel", users_path %>
+<% end %>
