@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  belongs_to :need
+  has_many :needs
+  has_many :users # how does this work?
   has_many :events
-  belongs_to :need
 end
