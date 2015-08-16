@@ -1,0 +1,35 @@
+<h1>Editing needs</h1>
+ 
+<%= form_for :need, url: need_path(@need), method: :patch do |f| %>
+ 
+  <% if @need.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@need.errors.count, "error") %> prohibited
+        this need from being saved:
+      </h2>
+      <ul>
+        <% @need.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+ 
+  <p>
+    <%= f.label :subject %>
+    <%= f.select :subject_id, options_for_select(@subject_options, :selected => @need.subject_id)%>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', needs_path %>

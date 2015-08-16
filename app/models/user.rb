@@ -1,13 +1,30 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :integer          not null, primary key
+#  first_name    :string
+#  last_name     :string
+#  username      :string
+#  password_hash :string
+#  role          :integer
+#  grade         :string
+#  school        :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class User < ActiveRecord::Base
+
   include BCrypt
 
   validates :username, :session_token, presence: true, uniqueness: true
   validates :password, presence: { message: "Password can't be blank" }
   after_initialize :ensure_session_token
-
   has_and_belongs_to_many :groups, join_table: 'members'
   has_and_belongs_to_many :events, join_table: 'happenings'
   has_and_belongs_to_many :subjects, join_table: 'studies'
+
   has_many :comments
   has_many :needs
 

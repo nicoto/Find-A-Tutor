@@ -1,6 +1,7 @@
 class CreateNeeds < ActiveRecord::Migration
   def change
     create_table :needs do |t|
+      t.string :title
       t.text :description
 
       t.integer :subject_id

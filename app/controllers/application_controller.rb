@@ -23,8 +23,7 @@ class ApplicationController < ActionController::Base
 
   # checks your session, bounces you off a page if you don't belong
   def bounce
-    redirect '/login' unless current_user
+    redirect_to users_path unless current_user
   end
 
 end
-
