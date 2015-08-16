@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def login(user)
-    session[:user_id] = @user.id
+    session[:user_id] = user.id
   end
 
   def logged_in?
