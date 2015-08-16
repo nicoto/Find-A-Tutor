@@ -1,0 +1,7 @@
+ALL THE GROUPS ARE HERE MUHHHHH
+<br>
+<% @groups.each do |group| %>
+<!-- make the following line a link -->
+<%= link_to group.name, group_path(group), class:"btn btn-primary" %>
+<h4><%= group.description %></h4>
+<% end %>

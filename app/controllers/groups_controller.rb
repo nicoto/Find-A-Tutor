@@ -5,10 +5,10 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new
+    @group = Group.new(group_params)
     if @group.save
       flash[:success] = ["New group successfully created"]
-      redirect_to group_url(@group)
+      redirect_to groups_path
     else
       flash[:errors] = @group.errors
       render :new
@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.all
+    @group = Group.find(params[:id])
   end
 
   def edit
@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     @group.update(group_params)
-    flash[:notice] = 'group Updated'
+    flash[:notice] = 'Group Updated'
     redirect_to groups_path
   end
 
@@ -35,5 +35,14 @@ class GroupsController < ApplicationController
     @group.destroy
     flash[:notice] = 'group Removed'
     redirect_to groups_path
+  end
+
+  def index
+    @groups = Group.all
+  end
+
+  private
+  def group_params
+    params.require(:group).permit(:name, :description)
   end
 end
