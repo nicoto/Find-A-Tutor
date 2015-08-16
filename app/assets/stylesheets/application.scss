@@ -17,13 +17,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-<<<<<<< HEAD
-
 .bg-b {background-color: #4a90e2;}
 
-.bg-g {background-color: #dddddd}
+.bg-g {background-color: #4D4D4D}
 
-.c-w {color: #fff;}
+.c-w, .c-w a {color: #fff;}
 
 .fl-l {float: left;}
 
@@ -33,10 +31,24 @@
 
 .p-s {padding: 1em;}
 
+.p-l {padding-left: 1em;}
+
+.p-r {padding-right: 1em;}
+
+.p-t-l {padding-top: 3em;}
+
 .h {height: 140px}
 
-.w {width: 354px}
-=======
+.w {width: 100%}
+
+.f-s {font-size: 1.3em}
+
+.f-s-l {font-size: 17px}
+
+.m-t {margin-top: .7em;}
+
+.lh-s {line-height: 1em;}
+
  $red:"#EB9693";
  $blue:"#EB9693";
 
@@ -47,21 +59,7 @@
 
 body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  width: 100%;
-  min-height: 375px;
-  height: 100%;
-  background-color: white;
 }
 
-.wrapper {
-  width: 126px;
-  height: 375px;
-}
 
-header {
-  width: 126px;
-  height: 96px;
-  background-color: $blue;
-}
->>>>>>> 01bd8c0a2787c0cd38715dc96576d846d1e3a34e
 
