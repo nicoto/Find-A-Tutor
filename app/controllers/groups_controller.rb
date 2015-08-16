@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     if @group.save
       flash[:success] = ["New group successfully created"]
-      redirect_to groups_path
+      redirect_to "/groups/#{@group.id}"
     else
       flash[:errors] = @group.errors
       render :new
