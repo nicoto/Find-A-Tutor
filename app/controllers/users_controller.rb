@@ -1,15 +1,19 @@
 class UsersController < ApplicationController
 
-def new # get form
+def new
   @user = User.new
 end
 
-def create # post creation
+def index
+  @user = User.all
+  render :index
+end
+
+def create
   @user = User.new(user_params)
   @user.save
-
-  flash[:notice] = 'Book Added'
-  redirect_to users_path
+  flash[:notice] = 'User Added'
+  redirect_to events_path
 end
 
 def edit
@@ -40,6 +44,6 @@ end
 
 private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :password_hash, :role, :grade, :school)
+    params.require(:user).permit(:first_name, :last_name, :username, :password, :role, :grade, :school, :email)
   end
 end

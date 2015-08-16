@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
   get 'events/search', to: 'events#search'
-  resources :events, except: [:destroy]
+  resources :events, except: [:destroy] do
+    resources :comments
+  end
   resources :users
   resources :needs
   resources :groups
   resources :locations
-  resources :events
 
 end

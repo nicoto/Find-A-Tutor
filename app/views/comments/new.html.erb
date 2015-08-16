@@ -1,0 +1,52 @@
+<h2>Add New Event</h2>
+<%= form_for @event do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :attendees %>
+    <%= f.text_field :attendees %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :time_start %>
+    <%= f.text_field :time_start %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :time_end %>
+    <%= f.text_field :time_end %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :subject %>
+    <%= f.select :subject_id, Subject.all.collect {|x| [x.name, x.id]} %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :user %>
+    <%= f.select :user_id, User.all.collect {|x| [x.first_name + ' ' + x.last_name, x.id]} %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.select :location_id, Location.all.collect {|x| [x.street + ' ' + x.suite, x.id]} %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :group %>
+    <%= f.select :group_id, Group.all.collect {|x| [x.name, x.id]} %><br>
+  </div>
+
+  <%= f.submit "Submit", class:'btn btn-primary' %>
+  <%= link_to "Cancel", events_path, class:"btn btn-default" %>
+
+<% end %>

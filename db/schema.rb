@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 20150816203925) do
   add_index "members", ["user_id"], name: "index_members_on_user_id", using: :btree
 
   create_table "needs", force: :cascade do |t|
-    t.string   "title"
     t.text     "description"
     t.integer  "subject_id"
     t.integer  "user_id"
@@ -116,11 +115,10 @@ ActiveRecord::Schema.define(version: 20150816203925) do
     t.string   "last_name"
     t.string   "username"
     t.string   "email"
-    t.string   "password_hash"
+    t.string   "password"
     t.integer  "role"
     t.string   "grade"
     t.string   "school"
-    t.string   "tags"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "session_token"
