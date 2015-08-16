@@ -1,13 +1,14 @@
 class User < ActiveRecord::Base
+
   attr_reader :password
 
   validates :username, :session_token, presence: true, uniqueness: true
   validates :password_hash, presence: { message: "Password can't be blank" }
   after_initialize :ensure_session_token
 
-  has_and_belongs_to_many :groups
-  has_and_belongs_to_many :events
-  has_and_belongs_to_many :subjects
+  has_and_belongs_to_many :groups, join_table: 'members'
+  has_and_belongs_to_many :events, join_table: 'happenings'
+  has_and_belongs_to_many :subjects, join_table: 'studies'
   has_many :comments
   has_many :needs
 
