@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-<<<<<<< HEAD
 
   attr_reader :password
 
@@ -7,16 +6,14 @@ class User < ActiveRecord::Base
   validates :password_hash, presence: { message: "Password can't be blank" }
   after_initialize :ensure_session_token
 
-=======
   include BCrypt
->>>>>>> a367c04a498e6e257296ea50096d5a650645e56e
+
   has_and_belongs_to_many :groups, join_table: 'members'
   has_and_belongs_to_many :events, join_table: 'happenings'
   has_and_belongs_to_many :subjects, join_table: 'studies'
   has_many :comments
   has_many :needs
 
-<<<<<<< HEAD
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
     if @user && @user.is_password?(password)
@@ -29,13 +26,13 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64(16)
   end
 
-  def is_password?(password)
-    BCrypt::Password.new(self.password_hash).is_password?(password)
-  end
+  # def is_password?(password)
+  #   BCrypt::Password.new(self.password_hash).is_password?(password)
+  # end
 
-  def password=(password)
-    self.password_hash = BCrypt::Password.create(password)
-  end
+  # def password=(password)
+  #   self.password_hash = BCrypt::Password.create(password)
+  # end
 
   def reset_session_token!
     self.session_token = User.generate_session_token
@@ -48,7 +45,6 @@ class User < ActiveRecord::Base
     self.session_token ||= User.generate_session_token
   end
 
-=======
   def password
     @password ||= Password.new(password_hash)
   end
@@ -57,5 +53,5 @@ class User < ActiveRecord::Base
     @password ||= Password.create(pass)
     self.password_hash = @password
   end
->>>>>>> a367c04a498e6e257296ea50096d5a650645e56e
+
 end
