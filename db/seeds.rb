@@ -60,7 +60,14 @@ end
 end
 
 5.times do
-  Needs.create(
-    
+  x = Needs.create(
+    description: Faker::Lorem.sentence(3)
+    subject_id: Subject.all.sample.id
   )
+  Location.find(rand(1..5)).needs << x
+  User.find(rand(1..5)).needs << x
+end
+
+5.times do
+  User.all.sample.events.sample.comments.create(description: Faker::Lorem.sentence(rand(1..3)))
 end
