@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: happenings
+# Table name: tags
 #
 #  id         :integer          not null, primary key
-#  user_id    :integer
+#  name       :string
+#  subject_id :integer
+#  class_id   :integer
 #  event_id   :integer
+#  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Happening < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :event
+class Tag < ActiveRecord::Base
 end
