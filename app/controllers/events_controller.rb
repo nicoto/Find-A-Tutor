@@ -51,7 +51,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @user = User
+    @user = User.find(session[:user_id])
     render :index
   end
 
