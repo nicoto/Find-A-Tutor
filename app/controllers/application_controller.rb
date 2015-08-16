@@ -28,4 +28,5 @@ class ApplicationController < ActionController::Base
   def bounce
     redirect_to users_path unless current_user
   end
+
 end

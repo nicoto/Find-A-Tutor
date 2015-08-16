@@ -1,4 +1,7 @@
-<h2>Add New Group</h2>
+<% @page_title = 'Add New Group' %>
+
+<%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
+
 <%= form_for @group do |f| %>
 
   <div class="form-group">
