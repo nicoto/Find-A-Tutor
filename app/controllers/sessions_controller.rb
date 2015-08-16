@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create # redirect to homepage
     @user = User.find_by_credentials(
       user_params[:username],
-      user_params[:password_hash]
+      user_params[:password]
     )
     if @user
       login(@user)
@@ -21,6 +21,12 @@ class SessionsController < ApplicationController
   def destroy # redirect to root
     logout(current_user)
     render json: {logged_out: true}
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password)
   end
 
 end

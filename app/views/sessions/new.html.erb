@@ -2,7 +2,7 @@
 <div id="wrapper">
 
 
-<%= form_for @user, :url => { :action => "create" }, :method => "post" do |f| %>
+<%= form_for @user, :url => { :action => "create" } do |f| %>
 <% if @user.errors.any? %>
 <% @user.errors.full_messages.each do |msg| %>
 
@@ -16,13 +16,8 @@
 </div>
 
 <div>
-  <%= f.label :email %>
-  <%= f.text_field :email, placeholder: 'jsmith@smith.com' %><br>
-</div>
-
-<div>
   <%= f.label :password %>
-  <%= f.text_field :password_hash, placeholder: 'X8df!90EO' %><br>
+  <%= f.text_field :password, placeholder: 'X8df!90EO' %><br>
 </div>
 
 <%= f.submit "Sign In" %>
