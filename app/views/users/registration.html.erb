@@ -1,74 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Register as a Tutor or a Student needing Tutoring</title>
-</head>
+<h2>After-school Tutoring Sign Up</h2>
+<div id="wrapper">
 
-<body>
+<%= form_for @user do |f| %>
+<% if @user.errors.any? %>
+<% @user.errors.full_messages.each do |msg| %>
 
-<div id="container_demo" >
+<div class="alert-error"><%= msg %></div>
+<% end %>
+<% end %>
 
-  <a class="hiddenanchor" id="Tutor SignUp"></a>
-  <a class="hiddenanchor" id="New Student Needing Tutor SignUp"></a>
-  <a class="hiddenanchor" id="Login"></a>
-
-  <div id="wrapper">
-
-    <div id="login">
-      <form  action="/create" method="post" autocomplete="on">
-        <h1>Log in</h1>
-        <p>
-          <label for="username" class="uname"> Your email: </label>
-          <input id="username" name="username" required="required" type="text" placeholder="mymail@mail.com"/>
-        </p>
-        <p>
-          <label for="password" class="youpasswd"> Your password: </label>
-          <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
-        </p>
-
-        <p class="keeplogin">
-          <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
-          <label for="loginkeeping">Keep me logged in</label>
-        </p>
-
-        <p class="login button">
-          <input type="submit" value="Login" />
-        </p>
-      </form>
-    </div>
-
-    <div id="register" class="animate form">
-      <form  action="create" autocomplete="on">
-        <h1> Register as a Tutor or a new Student </h1>
-        <p>
-          <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-          <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-        </p>
-        <p>
-          <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-          <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
-        </p>
-        <p>
-          <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-          <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-        </p>
-        <p>
-          <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-          <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-        </p>
-        <p class="signin button">
-          <input type="submit" value="Sign up"/>
-        </p>
-        <p class="change_link">
-          Already a member ?
-          <a href="#tologin" class="to_register"> Go and log in </a>
-        </p>
-      </form>
-    </div>
-
-  </div>
+<div>
+  <%= f.label :role %>
+<%= f.select :role, ['I need tutoring', 'I want to be a tutor']%>
 </div>
 
-</body>
-</html>
+<div>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, class:'form-control', placeholder: 'John' %><br>
+</div>
+
+<div>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, class:'form-control', placeholder: 'Smith' %><br>
+</div>
+
+<div>
+  <%= f.label :school %>
+  <%= f.text_field :school, class:'form-control', placeholder: 'Your-town Area School District, College, or University' %><br>
+</div>
+
+<div>
+  <%= f.label :grade %>
+<%= f.select :grade, ['1rst Grade', '2nd Grade', '3rd Grade', '4rth Grade', '5th Grade', '6th Grade', '7th Grade', '8th Grade', '9th Grade Freshman', '10th Grade Sophmore', '11th Grade Junior', '12th Grade Senior','College Freshman', 'College Sophmore', ' College Junior', 'College Senior' , 'Other']%>
+</div>
+
+<div>
+  <%= f.label :email %>
+  <%= f.text_field :username, placeholder: 'mymail@mail.com' %><br>
+</div>
+
+<div>
+  <%= f.label :password %>
+  <%= f.text_field :password_hash, placeholder: 'X8df!90EO' %><br>
+</div>
+
+<div>
+  <%= f.label :password %>
+  <%= f.text_field :passwordsignup_confirm, placeholder: 'X8df!90EO' %><br>
+</div>
+
+<%= f.submit "Submit" %>
+
+<%= link_to "Cancel", users_path %>
+<% end %>
