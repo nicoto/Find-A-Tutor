@@ -20,16 +20,20 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.includes(:location).all
+    @events = Event.all
     render :index
   end
 
   def search
-    @events = Event.where('description LIKE %?% OR name LIKE %?% AND zipcode = ?',
-      params[:term], params[:term], params[:zipcode])
+    @events = Event.(:location).where('events.description LIKE ? OR events.name LIKE ? AND locations.zip = ?',
+      "%#{search_params[:zipcode]}%", "%#{search_params[:term]}%", "%#{search_params[:zipcode]}%")
   end
 
   private
+  def search_params
+    params.require(:search).permit(:term, :zipcode)
+  end
+
   def event_params
     params.require(:event).permit(:name, :attendees, :time_start, :time_end,
       :description, :subject_id, :location_id, :group_id)

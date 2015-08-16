@@ -1,8 +1,8 @@
 
-<li class="row">
+<li class="list-item">
 
   <div class="col-md-3"><%= event.name %></div>
-  <div class="col-md-3"><%= event.location.name %></div>
-  <div class="col-md-3"><%= event.time_start %></div>
+  <div class="col-md-3"><%= event %></div>
+  <div class="col-md-3"><%= event.created_at.to_formatted_s(:short) %></div>
 
 </li>
