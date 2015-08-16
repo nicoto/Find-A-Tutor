@@ -10,8 +10,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-# gem 'bcrypt', '~> 3.1.7'
+gem 'jquery-ui-rails'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bcrypt', '~> 3.1.7'
 
 
 # gem 'capistrano-rails', group: :development
