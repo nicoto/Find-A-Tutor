@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :events, except: [:destroy]
   resources :users
   resources :groups
+  resources :locations
 
 end
