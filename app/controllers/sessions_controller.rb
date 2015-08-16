@@ -1,20 +1,17 @@
 class SessionsController < ApplicationController
 
   def new # login route, display the page for login
+    redirect_to events_path if logged_in?
     @user = User.new
   end
 
   def create # redirect to homepage
-    @user = User.find_by_credentials(
-      user_params[:username],
-      user_params[:password]
-    )
-    if @user
-      login(@user)
-      redirect_to "/app"
+    if logged_in?
+      redirect_to events_path
     else
-      flash[:errors] = ["Invalid credentials"]
-      redirect_to :back
+      @user = User.find_by(username: params[:user][:username])
+      login(@user)
+      redirect_to events_path
     end
   end
 
