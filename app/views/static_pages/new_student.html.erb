@@ -1,8 +1,3 @@
-<form class="" action="events/search" method="get">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<h1>Find study sessions to attend</h1>
 
-  <input type="text" name="search[term]" placeholder="What subject?">
-  <input type="text" name="search[zipcode]" placeholder="Zipcode?">
-
-  <button type="submit" name="button">Add</button>
-</form>
+<%= render "events/form" %>

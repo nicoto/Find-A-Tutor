@@ -25,8 +25,9 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.(:location).where('events.description LIKE ? OR events.name LIKE ? AND locations.zip = ?',
-      "%#{search_params[:zipcode]}%", "%#{search_params[:term]}%", "%#{search_params[:zipcode]}%")
+    @events = Event.joins('LEFT OUTER JOIN locations ON locations.id = events.location_id')
+.where('events.description LIKE ? OR events.name LIKE ? AND locations.zip = ?',
+      search_params[:zipcode], "%#{search_params[:term]}%", "%#{search_params[:zipcode]}%")
   end
 
   private
