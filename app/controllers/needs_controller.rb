@@ -4,19 +4,24 @@ class NeedsController < ApplicationController
    @need = Need.new
   end
 
+  def edit
+    @subject_options = Subject.all.map{|s| [s.name, s.id]}
+    @need = Need.find_by(id: params[:id])
+  end
+
   def create
     @subject = Subject.find_by(id: params[:subject_id])
 
-    #map back to users
-    @subject.needs.create(description: params[:description])
+    #map back to users and subject
+    @need = Need.new(description: params[:description])
+    if @need.save
+      redirect_to @need
+    else
+      render 'new'
+    end
   end
 
   def update
-    
-  end
-
-  def edit
-    
   end
 
   def destroy

@@ -9,9 +9,9 @@
 #
 
 class Subject < ActiveRecord::Base
-  include Taggable
 
-  has_and_belongs_to_many :users
+  has_and_belongs_to_many :users, join_table: 'studies'
+
   has_many :events
   has_many :needs
 end

@@ -16,7 +16,7 @@
 #
 
 class Location < ActiveRecord::Base
-  belongs_to :need
-  belongs_to :event
-  belongs_to :need
+  has_many :needs
+  has_many :users
+  has_many :events
 end

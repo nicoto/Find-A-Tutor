@@ -15,11 +15,11 @@
 #
 
 class User < ActiveRecord::Base
-  include Taggable
 
-  has_and_belongs_to_many :groups
-  has_and_belongs_to_many :events
-  has_and_belongs_to_many :subjects
+  has_and_belongs_to_many :groups, join_table: 'members'
+  has_and_belongs_to_many :events, join_table: 'happenings'
+  has_and_belongs_to_many :subjects, join_table: 'studies'
+
   has_many :comments
   has_many :needs
 
