@@ -5,5 +5,4 @@ class Event < ActiveRecord::Base
   belongs_to :subject
   belongs_to :group
   has_many :comments
-  has_one :location
 end

@@ -40,12 +40,16 @@ end
 5.times do
   time_start = Faker::Time.between(4.days.ago, Time.now, :evening)
   time_end = time_start + 1800000
+
   Group.find(rand(1..5)).events.create(name: Faker::Lorem.word,
                 attendees: rand(5..10),
                 time_start: time_start,
                 time_end: time_end,
-                description: Faker::Lorem.sentence(rand(3..5)),
-               ).location.create(
+                description: Faker::Lorem.sentence(rand(3..5)))
+end
+
+Event.all.each do |event|
+  Location.create(
     street: Faker::Address.street_address,
     suite: Faker::Address.secondary_address,
     city: Faker::Address.city,
@@ -54,18 +58,18 @@ end
     name: Faker::Name.name,
     phone: Faker::PhoneNumber.cell_phone,
     contact: Faker::Internet.email
-   )
+   ).events << event
 end
 
-# 5.times do
-#   x = Needs.create(
-#     description: Faker::Lorem.sentence(3)
-#     subject_id: Subject.all.sample.id
-#   )
-#   Location.find(rand(1..5)).needs << x
-#   User.find(rand(1..5)).needs << x
-# end
+5.times do
+  x = Needs.create(
+    description: Faker::Lorem.sentence(3)
+    subject_id: Subject.all.sample.id
+  )
+  Location.find(rand(1..5)).needs << x
+  User.find(rand(1..5)).needs << x
+end
 
-# 5.times do
-#   User.all.sample.events.sample.comments.create(description: Faker::Lorem.sentence(rand(1..3)))
-# end
+5.times do
+  User.all.sample.events.sample.comments.create(description: Faker::Lorem.sentence(rand(1..3)))
+end
