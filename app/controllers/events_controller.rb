@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def new
-    @event = Event.new(event_params)
+    @event = Event.new
   end
 
   def create
@@ -25,14 +25,14 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.where('description LIKE %?% AND zipcode = ?',
-      params[:description], params[:zipcode])
+    @events = Event.where('description LIKE %?% OR name LIKE %?% AND zipcode = ?',
+      params[:term], params[:term], params[:zipcode])
   end
 
   private
-
   def event_params
-    # params.require(:event).permit(:)
+    params.require(:event).permit(:name, :attendees, :time_start, :time_end,
+      :description, :subject_id, :location_id, :group_id)
   end
 
 end
