@@ -76,3 +76,28 @@ h4 {
   color: white;
 }
 
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
+
+.awwpx {
+  padding-bottom: 17px;
+}
+
+.left {
+  padding-left: 15px;
+}
+
+.right {
+  padding-right: 15px;
+}
