@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
 
 5.times do
   User.create (first_name: Faker::Name.first_name,
@@ -18,6 +19,6 @@
               )
   Subject.create(name: Faker::Lorem.word)
   Events.create(name: Faker::Lorem.word,
-                
+
                )
 end
