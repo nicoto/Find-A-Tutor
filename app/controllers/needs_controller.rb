@@ -1,4 +1,13 @@
 class NeedsController < ApplicationController
+
+  def index
+    @needs = Need.all   
+  end
+
+  def show
+    @need = Need.find(params[:id])
+  end
+
   def new
    @subject_options = Subject.all.map{|s| [s.name, s.id]}
    @need = Need.new
@@ -6,14 +15,11 @@ class NeedsController < ApplicationController
 
   def edit
     @subject_options = Subject.all.map{|s| [s.name, s.id]}
-    @need = Need.find_by(id: params[:id])
+    @need = Need.find(params[:id])
   end
 
   def create
-    @subject = Subject.find_by(id: params[:subject_id])
-
-    #map back to users and subject
-    @need = Need.new(description: params[:description])
+    @need = Need.new(need_params)
     if @need.save
       redirect_to @need
     else
@@ -22,21 +28,25 @@ class NeedsController < ApplicationController
   end
 
   def update
+    @need = Need.find(params[:id])
+    if @need.update(need_params)
+      redirect_to @need
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-    
-  end
+    @need = Need.find(params[:id])
+    @need.destroy
 
-  def index
-   
-  end
-
-  def show
+    redirect_to needs_path
   end
 
   private
-  def author_params
-    
+  def need_params
+    #map back to users and subject
+    params.require(:need).permit(:description, :subject_id)
   end
+
 end

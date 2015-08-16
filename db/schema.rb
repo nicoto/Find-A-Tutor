@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20150815232403) do
   add_index "members", ["user_id"], name: "index_members_on_user_id", using: :btree
 
   create_table "needs", force: :cascade do |t|
+    t.string   "title"
     t.text     "description"
     t.integer  "subject_id"
     t.integer  "user_id"
