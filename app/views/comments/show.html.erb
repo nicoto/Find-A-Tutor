@@ -9,22 +9,6 @@
 <h5><%= @event.location.street %></h5><br>
 <h5><%= @event.group.name %></h5><br>
 
-<% @comments.each do |comment| %>
-  <%= comment.description %>
-  <%= User.find_by_id(comment.user_id).first_name %>
-<% end %>
 
-<h2>Add New Comment</h2>
-<%= form_for @comment do |f| %>
-
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_field :description %><br>
-  </div>
-
-  <%= f.submit "Submit", class:'btn btn-primary' %>
-  <%= link_to "Cancel", comments_path, class:"btn btn-default" %>
-
-<% end %>
 
 <%= link_to 'Edit', edit_event_path(@event.id) %> | <%= link_to 'Delete', event_path(@event.id), method: :delete, data: {confirm: 'Are you sure?'} %>

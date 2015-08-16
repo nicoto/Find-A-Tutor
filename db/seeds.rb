@@ -68,7 +68,7 @@ end
 
 5.times do
   x = Need.create(
-    title: Faker::Lorem.sentence(3),
+    # title: Faker::Lorem.sentence(3),
     description: Faker::Lorem.sentence(3),
     subject_id: Subject.all.sample.id
   )

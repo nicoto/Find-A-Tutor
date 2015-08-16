@@ -1,0 +1,12 @@
+<h2>Add New Comment</h2>
+<%= form_for @comment do |f| %>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
+  </div>
+
+  <%= f.submit "Submit", class:'btn btn-primary' %>
+  <%= link_to "Cancel", comments_path, class:"btn btn-default" %>
+
+<% end %>
