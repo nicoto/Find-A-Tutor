@@ -1,8 +1,7 @@
-<h1>Tutoring Sessions</h1>
-<% if @events %>
-  <% @events.each do |event| %>
-    <%= event.name %>
-  <% end %>
+<% @users.each do |user| %>
+<%= user.first_name %>
+<%= user.last_name %>
+<%= user.username %>
 <% end %>
 
 <%= link_to "New Event", new_event_path, class:"btn btn-primary"  %>

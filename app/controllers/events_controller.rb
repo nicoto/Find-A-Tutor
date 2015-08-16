@@ -54,10 +54,10 @@ class EventsController < ApplicationController
     render :index
   end
 
-  def search
-    @events = Event.(:location).where('events.description LIKE ? OR events.name LIKE ? AND locations.zip = ?',
-      "%#{search_params[:zipcode]}%", "%#{search_params[:term]}%", "%#{search_params[:zipcode]}%")
-  end
+  # def search
+  #   @events = Event.(:location).where('events.description LIKE ? OR events.name LIKE ? AND locations.zip = ?',
+  #     "%#{search_params[:zipcode]}%", "%#{search_params[:term]}%", "%#{search_params[:zipcode]}%")
+  # end
 
   private
   def search_params

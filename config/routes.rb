@@ -16,6 +16,5 @@ Rails.application.routes.draw do
   resources :needs
   resources :groups
   resources :locations
-  resources :events
 
 end
