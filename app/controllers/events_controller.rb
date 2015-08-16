@@ -35,18 +35,18 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @comment = Comment.new
-    @comment.description = params[:description]
-    @comment.user_id = current_user.id
-    @comment.event_id = Event.find(params[:event_id])
-    if @comment.save
-      flash[:success] = ['Comment successfully created']
-      redirect_to comment_url(@comment)
-    else
-      flash.now[:errors] = @comment.errors
-      render :new
-    end
-    @comments = Comment.where(event_id: params[:id])
+    # @comment = Comment.new
+    # @comment.description = params[:description]
+    # @comment.user_id = current_user.id
+    # @comment.event_id = Event.find(params[:event_id])
+    # if @comment.save
+    #   flash[:success] = ['Comment successfully created']
+    #   redirect_to comment_url(@comment)
+    # else
+    #   flash.now[:errors] = @comment.errors
+    #   render :new
+    # end
+    # @comments = Comment.where(event_id: params[:id])
   end
 
   def index
