@@ -1,0 +1,55 @@
+<h2>After-school Tutoring Sign Up</h2>
+<div id="wrapper">
+
+<%= form_for @user, :url => { :action => "show" } do |f| %>
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |msg| %>
+    <div class="alert-error"><%= msg %></div>
+  <% end %>
+<% end %>
+  <%= f.text_field :first_name, class:'form-control', placeholder: 'John' %>
+
+<div>
+  <%= f.label :role %>
+<%= f.select :role, ['I need tutoring', 'I want to be a tutor']%>
+</div>
+
+<div>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, class:'form-control', placeholder: 'John' %><br>
+</div>
+
+<div>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, class:'form-control', placeholder: 'Smith' %><br>
+</div>
+
+<div>
+  <%= f.label :school %>
+  <%= f.text_field :school, class:'form-control', placeholder: 'Your-town Area School District, College, or University' %><br>
+</div>
+
+<div>
+  <%= f.label :grade %>
+<%= f.select :grade, ['1rst Grade', '2nd Grade', '3rd Grade', '4rth Grade', '5th Grade', '6th Grade', '7th Grade', '8th Grade', '9th Grade Freshman', '10th Grade Sophmore', '11th Grade Junior', '12th Grade Senior','College Freshman', 'College Sophmore', ' College Junior', 'College Senior' , 'Other']%>
+</div>
+
+<div>
+  <%= f.label :username %>
+  <%= f.text_field :username, placeholder: 'jsmith' %><br>
+</div>
+
+<div>
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder: 'mymail@mail.com' %><br>
+</div>
+
+<div>
+  <%= f.label :password %>
+  <%= f.text_field :password_hash, placeholder: 'X8df!90EO' %><br>
+</div>
+
+<%= f.submit "Submit" %>
+
+<%= link_to "Cancel", users_path %>
+<% end %>
