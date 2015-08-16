@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :role
       t.string :grade
       t.string :school
+      t.string :tags
 
       t.timestamps null: false
     end
