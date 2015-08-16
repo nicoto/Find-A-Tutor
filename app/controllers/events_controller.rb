@@ -15,6 +15,24 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    flash[:notice] = 'event Updated'
+    redirect_to events_path
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:notice] = 'Event Removed'
+    redirect_to events_path
+  end
+
   def show
     @event = Event.find(params[:id])
   end
@@ -36,7 +54,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :attendees, :time_start, :time_end,
-      :description, :subject_id, :location_id, :group_id)
+      :description, :subject_id, :location_id, :event_id, :group_id, :user_id)
   end
 
 end
