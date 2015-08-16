@@ -2,8 +2,8 @@ class CreateStudies < ActiveRecord::Migration
   def change
     create_table :studies do |t|
 
-      belongs_to :user
-      belongs_to :subject
+      t.integer :user_id
+      t.integer :subject_id
       
       t.timestamps null: false
     end
