@@ -1,3 +1,17 @@
+<% @page_title = 'Tutoring Session Info' %>
+
+<%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
+
+<div class='row' >
+  <h3 class='p-l b-s w c-o p-b-s'><%= @event.name %> @ <%= @event.location.name %></h3>
+  <div class='b-s p-l p-r clearfix'>
+
+<time><h4><span class="glyphicon glyphicon-calendar f-s c-g p-r" aria-hidden="true"></span><%= Date::MONTHNAMES[@event.time_start.month] %> <%= @event.time_start.day %>, <%= @event.time_start.year %></h4><p><%= @event.time_start.time %></p></time>
+</div>
+</div>
+
+
+
 <h2><%= @event.name %></h2>
 
 <h5><%= @event.attendees %></h5><br>
@@ -5,26 +19,9 @@
 <h5><%= @event.time_end %></h5><br>
 <h5><%= @event.description %></h5><br>
 <h5><%= @event.subject.name %></h5><br>
-<h5><%= @event.user.first_name %> <%= @event.user.last_name %></h5><br>
-<h5><%= @event.location.street %></h5><br>
 <h5><%= @event.group.name %></h5><br>
 
-<% @comments.each do |comment| %>
-  <%= comment.description %>
-  <%= User.find_by_id(comment.user_id).first_name %>
-<% end %>
 
-<h2>Add New Comment</h2>
-<%= form_for @comment do |f| %>
 
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_field :description %><br>
-  </div>
-
-  <%= f.submit "Submit", class:'btn btn-primary' %>
-  <%= link_to "Cancel", comments_path, class:"btn btn-default" %>
-
-<% end %>
 
 <%= link_to 'Edit', edit_event_path(@event.id) %> | <%= link_to 'Delete', event_path(@event.id), method: :delete, data: {confirm: 'Are you sure?'} %>
