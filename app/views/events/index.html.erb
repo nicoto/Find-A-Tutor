@@ -3,9 +3,25 @@
 
 <div>
   <% @events.each do |event| %>
+<<<<<<< HEAD
     <div class='bg-g img-rounded h w'>
     <h2><%= link_to event.name, event_path(event)%></h2>
     <%= link_to 'Edit', edit_event_path(event.id), class:"btn btn-primary"  %> | <%= link_to 'Delete', event_path(event.id), class:"btn btn-primary", method: :delete, data: {confirm: 'Are you sure?'} %><br>
+=======
+  <div class='c-w bg-g img-rounded h w m-t p-l'>
+
+    <strong class=' f-s-l'><%= link_to event.name, event_path(event)%></strong>
+    <!-- Missing path -->
+    <div class='row'>
+      <div class='col-xs-9 p-t-l'>
+        <p><strong>Venue: </strong><%= event.location.name %></p>
+        <p><strong>Time: </strong><%= event.time_start %></p>
+      </div>
+      <div class='col-xs-3 p-r'>
+        <span class="glyphicon glyphicon-plus-sign pull-right f-s c-w p-r p-t-l" aria-hidden="true"></span>
+      </div>
+    </div>
+>>>>>>> 7b87314266a73db4f41bbccf71b2f0cf9e3f1f58
     </div>
   <% end %>
 </div>

@@ -19,9 +19,9 @@
 
 .bg-b {background-color: #4a90e2;}
 
-.bg-g {background-color: #dddddd}
+.bg-g {background-color: #4D4D4D}
 
-.c-w {color: #fff;}
+.c-w, .c-w a {color: #fff;}
 
 .fl-l {float: left;}
 
@@ -31,9 +31,23 @@
 
 .p-s {padding: 1em;}
 
+.p-l {padding-left: 1em;}
+
+.p-r {padding-right: 1em;}
+
+.p-t-l {padding-top: 3em;}
+
 .h {height: 140px}
 
-.w {width: 354px}
+.w {width: 100%}
+
+.f-s {font-size: 1.3em}
+
+.f-s-l {font-size: 17px}
+
+.m-t {margin-top: .7em;}
+
+.lh-s {line-height: 1em;}
 
  $red:"#EB9693";
  $blue:"#EB9693";
