@@ -1,5 +1,4 @@
 <% @page_title = 'Create a Tutoring Group' %>
-
 <%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
 
 <%= form_for @group do |f| %>
@@ -13,7 +12,6 @@
     <%= f.text_field :description, placeholder: 'This tutorial group is for...', class:"form-control" %><br>
   </div>
 
-  <%= f.submit "Confirm", class:'btn btn-primary' %><br>
-  <%= link_to " Cancel ", groups_path, class:"btn btn-default" %>
+  <%= f.submit "Confirm", class:'btn form-control', style:"background-color: #FE7E68; color: white" %><br>
 
 <% end %>
