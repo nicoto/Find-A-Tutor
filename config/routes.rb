@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :users
   resources :needs
   resources :groups
+  resources :locations
 
 end

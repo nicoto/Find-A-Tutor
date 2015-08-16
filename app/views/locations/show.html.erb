@@ -1,0 +1,12 @@
+<h2><%= @location.name %></h2>
+
+<h5><%= @location.street %></h5><br>
+<h5><%= @location.suite %></h5><br>
+<h5><%= @location.city %></h5><br>
+<h5><%= @location.state %></h5><br>
+<h5><%= @location.zip %></h5><br>
+<h5><%= @location.name %></h5><br>
+<h5><%= @location.contact %></h5><br>
+<h5><%= @location.phone %></h5><br>
+
+<%= link_to 'Edit', edit_location_path(@location.id) %> | <%= link_to 'Delete', location_path(@location.id), method: :delete, data: {confirm: 'Are you sure?'} %>

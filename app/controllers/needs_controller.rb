@@ -1,7 +1,7 @@
 class NeedsController < ApplicationController
 
   def index
-    @needs = Need.all   
+    @needs = current_user.needs  
   end
 
   def show
@@ -19,7 +19,7 @@ class NeedsController < ApplicationController
   end
 
   def create
-    @need = Need.new(need_params)
+    @need = current_user.needs.new(need_params)
     if @need.save
       redirect_to @need
     else
@@ -45,7 +45,6 @@ class NeedsController < ApplicationController
 
   private
   def need_params
-    #map back to users and subject
     params.require(:need).permit(:description, :subject_id)
   end
 
