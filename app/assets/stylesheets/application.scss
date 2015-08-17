@@ -27,6 +27,8 @@
 
 .c-o {color: #FE7E68;}
 
+.b-o {background-color: #FE7E68;}
+
 .fl-l {float: left;}
 
 .ft-r {float: right;}
@@ -49,13 +51,23 @@
 
 .f-s {font-size: 1.5em}
 
+.f-s-m {font-size: 2.5em}
+
 .f-s-l {font-size: 17px}
 
 .m-t {margin-top: .7em;}
 
+.m-b {margin-bottom: 1.4em;}
+
+.m-t-l {margin-top: 2em;}
+
 .lh-s {line-height: 1em;}
 
 .b-s { box-shadow: 0 5px 2px -2px #888888;}
+
+.d-i { display: inline-block;}
+
+.txt-a {text-align: center;}
 
  $red:"#EB9693";
  $blue:"#EB9693";
@@ -69,7 +81,7 @@ body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-h4 {
+.gray {
   background-color: #EFEDEF;
   margin-left: -15px;
   margin-right: -15px;
@@ -80,22 +92,8 @@ h4 {
 }
 
 .confirm {
-  background-color: #FE7E68; 
+  background-color: #FE7E68;
   color: white;
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  zoom: 1; /* ie 6/7 */
 }
 
 .awwpx {
@@ -117,6 +115,8 @@ h4 {
     /* make a square container */
     width: 150px;
     height: 150px;
+    width: 50px;
+    height: 50px;
 
     /* fill the container, preserving aspect ratio, and cropping to fit */
     background-size: cover;

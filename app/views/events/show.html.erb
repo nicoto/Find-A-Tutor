@@ -5,23 +5,36 @@
 <div class='row' >
   <h3 class='p-l b-s w c-o p-b-s'><%= @event.name %> @ <%= @event.location.name %></h3>
   <div class='b-s p-l p-r clearfix'>
+    <% if @event.time_start && @event.time_end %>
+<time><h3><span class="glyphicon glyphicon-calendar f-s c-g p-r" aria-hidden="true"></span><%= Date::MONTHNAMES[@event.time_start.month] %> <%= @event.time_start.day %>, <%= @event.time_start.year %></h3>
 
-<time><h4><span class="glyphicon glyphicon-calendar f-s c-g p-r" aria-hidden="true"></span><%= Date::MONTHNAMES[@event.time_start.month] %> <%= @event.time_start.day %>, <%= @event.time_start.year %></h4><p><%= @event.time_start.time %></p></time>
+  <p ><%= @event.time_start.time.strftime("%I:%M%p") %> - <%= @event.time_end.time.strftime("%I:%M%p") %></p></time>
+  <% end %>
 </div>
 </div>
 
+  <div class='row b-s m-b'>
+  <div class='col-xs-3 m-t-l'>
+    <span class="glyphicon glyphicon-map-marker f-s-m c-g" aria-hidden="true"></span>
+  </div>
+  <div class='col-xs-9'>
+    <h3>
+      <%= @event.location.name %>
+    </h3>
+    <p>
+      <%= @event.location.street %>, <%= @event.location.city %>
+    </p>
+  </div>
+</div>
 
-
-<h2><%= @event.name %></h2>
-
-<h5><%= @event.attendees %></h5><br>
-<h5><%= @event.time_start %></h5><br>
-<h5><%= @event.time_end %></h5><br>
-<h5><%= @event.description %></h5><br>
-<h5><%= @event.subject.name %></h5><br>
-<h5><%= @event.group.name %></h5><br>
-
-
-
-
-<%= link_to 'Edit', edit_event_path(@event.id) %> | <%= link_to 'Delete', event_path(@event.id), method: :delete, data: {confirm: 'Are you sure?'} %>
+<div class='row m-t b-s p-l'>
+  <h4><%= @event.description %></h4>
+</div>
+<div class='m-b'>
+  <h3 class='d-i p-r'>Tutors </h3>
+  <%= image_tag "guy.png" %>
+  <%= image_tag "gal.png" %>
+</div>
+<div class='b-o row'>
+  <h3 class='txt-a c-w'><a href='#'>Join this session </a></h3>
+</div>
