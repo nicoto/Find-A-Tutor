@@ -19,7 +19,3 @@ An after-school tutoring application that connects College Student voluteers as 
   - Creator
   - Students
   - Tutors
-- Locations
-  - Address
-  - Occupancy
-  - Schedule
