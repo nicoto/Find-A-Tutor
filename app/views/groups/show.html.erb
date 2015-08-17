@@ -2,11 +2,13 @@
 <%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
 <div>
 <h2><%= @group.name %></h2>
-<h5><%= @group.description %></h5>
-<strong>Tutors</strong>
+<strong>Tutors<strong>
 <% @group.users.where(role: 1).each do |tutor| %>
-  <img class="avatar" src=<%= Faker::Avatar.image %> />
+  <img class="avatar" src="http://static5.depositphotos.com/1000393/403/i/950/depositphotos_4032122-Confident-teacher.jpg" />
 <% end %>
+<h5><%= @group.description %></h5>
+
+
 <div class="row" style="border: solid 1px gray;">
   <br>
   <div class="awwpx left clearfix" style="float: left;">
