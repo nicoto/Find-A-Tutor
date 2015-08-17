@@ -2,11 +2,13 @@
 <%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
 <div>
 <h2><%= @group.name %></h2>
-<h5><%= @group.description %></h5>
-<strong>Tutors</strong>
+<strong>Tutors<strong>
 <% @group.users.where(role: 1).each do |tutor| %>
-  <img class="avatar" src=<%= Faker::Avatar.image %> />
+  <img class="avatar" src="http://edushyster.com/wp-content/uploads/2012/10/swf.jpg" />
 <% end %>
+<h5><%= @group.description %></h5>
+
+
 <div class="row" style="border: solid 1px gray;">
   <br>
   <div class="awwpx left clearfix" style="float: left;">
@@ -18,8 +20,8 @@
   </div>
 </div>
 <br>
-
-<%= link_to "Join This Group", '/',class:'btn form-control confirm' %><br>
+<%= link_to "Add Event", new_event_path,class:'btn form-control confirm' %><br>
+<!-- <%= link_to "Join This Group", '/',class:'btn form-control confirm' %><br> -->
 
 <br>
 

@@ -2,12 +2,12 @@
 <%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
 
 <%= form_for @group do |f| %>
-  <h4>Your tutoring group's name</h4>
+  <h4 class='gray'>Your tutoring group's name</h4>
   <div>
     <%= f.text_field :name, placeholder: 'e.g. San Francisco Math SAT Group', class:"form-control" %><br>
   </div>
 
-  <h4>What is this tutoring group about?</h4>
+  <h4 class='gray'>What is this tutoring group about?</h4>
   <div>
     <%= f.text_field :description, placeholder: 'This tutorial group is for...', class:"form-control" %><br>
   </div>

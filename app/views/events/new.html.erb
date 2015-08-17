@@ -1,52 +1,43 @@
-<h2>Add New Event</h2>
+<% @page_title = 'Add New Event' %>
+<%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
+
 <%= form_for @event do |f| %>
 
+  <h4 class='gray'>Name</h4>
   <div class="form-group">
-    <%= f.label :name %>
     <%= f.text_field :name %><br>
   </div>
 
+  <h4 class='gray'>Attendees</h4>
   <div class="form-group">
-    <%= f.label :attendees %>
     <%= f.text_field :attendees %><br>
   </div>
 
+  <h4 class='gray'>Start Time</h4>
   <div class="form-group">
-    <%= f.label :time_start %>
     <%= f.text_field :time_start %><br>
   </div>
 
+  <h4 class='gray'>End Time</h4>
   <div class="form-group">
-    <%= f.label :time_end %>
     <%= f.text_field :time_end %><br>
   </div>
 
+  <h4 class='gray'>Description</h4>
   <div class="form-group">
-    <%= f.label :description %>
     <%= f.text_field :description %><br>
   </div>
 
+  <h4 class='gray'>Subject</h4>
   <div class="form-group">
-    <%= f.label :subject %>
     <%= f.select :subject_id, Subject.all.collect {|x| [x.name, x.id]} %><br>
   </div>
 
+  <h4 class='gray'>Location</h4>
   <div class="form-group">
-    <%= f.label :user %>
-    <%= f.select :user_id, User.all.collect {|x| [x.first_name + ' ' + x.last_name, x.id]} %><br>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :location %>
     <%= f.select :location_id, Location.all.collect {|x| [x.street + ' ' + x.suite, x.id]} %><br>
   </div>
 
-  <div class="form-group">
-    <%= f.label :group %>
-    <%= f.select :group_id, Group.all.collect {|x| [x.name, x.id]} %><br>
-  </div>
-
-  <%= f.submit "Submit", class:'btn btn-primary' %>
-  <%= link_to "Cancel", events_path, class:"btn btn-default" %>
+  <%= f.submit "Submit", class:'btn form-control confirm' %><br>
 
 <% end %>
