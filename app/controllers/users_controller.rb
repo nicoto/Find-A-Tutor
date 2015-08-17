@@ -12,6 +12,7 @@ end
 def create
   @user = User.new(user_params)
   @user.save
+  login(@user)
   flash[:notice] = 'User Added'
   redirect_to events_path
 end
