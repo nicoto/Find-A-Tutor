@@ -4,7 +4,7 @@
 <h2><%= @group.name %></h2>
 <strong>Tutors<strong>
 <% @group.users.where(role: 1).each do |tutor| %>
-  <img class="avatar" src="http://static5.depositphotos.com/1000393/403/i/950/depositphotos_4032122-Confident-teacher.jpg" />
+  <img class="avatar" src="http://edushyster.com/wp-content/uploads/2012/10/swf.jpg" />
 <% end %>
 <h5><%= @group.description %></h5>
 
@@ -20,8 +20,8 @@
   </div>
 </div>
 <br>
-
-<%= link_to "Join This Group", '/',class:'btn form-control confirm' %><br>
+<%= link_to "Add Event", new_event_path,class:'btn form-control confirm' %><br>
+<!-- <%= link_to "Join This Group", '/',class:'btn form-control confirm' %><br> -->
 
 <br>
 

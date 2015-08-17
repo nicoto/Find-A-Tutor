@@ -27,6 +27,8 @@
 
 .c-o {color: #FE7E68;}
 
+.b-o {background-color: #FE7E68;}
+
 .fl-l {float: left;}
 
 .ft-r {float: right;}
@@ -49,13 +51,23 @@
 
 .f-s {font-size: 1.5em}
 
+.f-s-m {font-size: 2.5em}
+
 .f-s-l {font-size: 17px}
 
 .m-t {margin-top: .7em;}
 
+.m-b {margin-bottom: 1.4em;}
+
+.m-t-l {margin-top: 2em;}
+
 .lh-s {line-height: 1em;}
 
 .b-s { box-shadow: 0 5px 2px -2px #888888;}
+
+.d-i { display: inline-block;}
+
+.txt-a {text-align: center;}
 
  $red:"#EB9693";
  $blue:"#EB9693";
@@ -78,7 +90,6 @@ body {
   padding-left: 5px;
   padding-bottom: 5px;
 }
-
 .confirm {
   background-color: #FE7E68;
   color: white;
