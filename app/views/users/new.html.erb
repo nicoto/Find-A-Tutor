@@ -1,4 +1,5 @@
-<h2>After-school Tutoring Sign Up</h2>
+<% @page_title = 'After-school Tutoring Sign Up' %>
+<%= render partial: 'layouts/header', locals: {page_title: @page_title} %><br>
 <div id="wrapper">
 
   <%= form_for @user do |f| %>
@@ -8,47 +9,47 @@
       <% end %>
     <% end %>
 
-  <div>
+  <div class="form-group">
     <%= f.label :role %>
     <%= f.select :role, ['I need tutoring', 'I want to be a tutor']%>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name, class:'form-control', placeholder: 'John' %><br>
+    <%= f.text_field :first_name, class:'form-control', placeholder: 'John' %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :last_name %>
-    <%= f.text_field :last_name, class:'form-control', placeholder: 'Smith' %><br>
+    <%= f.text_field :last_name, class:'form-control', placeholder: 'Smith' %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :school %>
-    <%= f.text_field :school, class:'form-control', placeholder: 'Your-town Area School District, College, or University' %><br>
+    <%= f.text_field :school, class:'form-control', placeholder: 'Your-town Area School District, College, or University' %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :grade %>
     <%= f.select :grade, ['1rst Grade', '2nd Grade', '3rd Grade', '4rth Grade', '5th Grade', '6th Grade', '7th Grade', '8th Grade', '9th Grade Freshman', '10th Grade Sophmore', '11th Grade Junior', '12th Grade Senior','College Freshman', 'College Sophmore', ' College Junior', 'College Senior' , 'Other']%>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :username %>
-    <%= f.text_field :username, placeholder: 'jsmith' %><br>
+    <%= f.text_field :username, placeholder: 'Becky' %><br>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email, placeholder: 'mymail@mail.com' %><br>
+    <%= f.text_field :email, placeholder: 'Becky@badatstarcraft.org' %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :password %>
-    <%= f.text_field :password, placeholder: 'X8df!90EO' %><br>
+    <%= f.text_field :password, placeholder: 'Password' %>
   </div>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class:'btn btn-primary' %>
 
   <%= link_to "Cancel", users_path %>
   <% end %>
