@@ -5,9 +5,11 @@
 <div class='row' >
   <h3 class='p-l b-s w c-o p-b-s'><%= @event.name %> @ <%= @event.location.name %></h3>
   <div class='b-s p-l p-r clearfix'>
-
+    <% if @event.time_start && @event.time_end %>
 <time><h3><span class="glyphicon glyphicon-calendar f-s c-g p-r" aria-hidden="true"></span><%= Date::MONTHNAMES[@event.time_start.month] %> <%= @event.time_start.day %>, <%= @event.time_start.year %></h3>
+
   <p ><%= @event.time_start.time.strftime("%I:%M%p") %> - <%= @event.time_end.time.strftime("%I:%M%p") %></p></time>
+  <% end %>
 </div>
 </div>
 
@@ -36,8 +38,3 @@
 <div class='b-o row'>
   <h3 class='txt-a c-w'><a href='#'>Join this session </a></h3>
 </div>
-
-
-
-
-<%= link_to 'Edit', edit_event_path(@event.id) %> | <%= link_to 'Delete', event_path(@event.id), method: :delete, data: {confirm: 'Are you sure?'} %>
