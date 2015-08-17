@@ -69,7 +69,7 @@ body {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-h4 {
+.gray {
   background-color: #EFEDEF;
   margin-left: -15px;
   margin-right: -15px;
@@ -80,7 +80,7 @@ h4 {
 }
 
 .confirm {
-  background-color: #FE7E68; 
+  background-color: #FE7E68;
   color: white;
 }
 
@@ -112,7 +112,7 @@ h4 {
 
 .avatar {
     /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
-    
+
     /* make a square container */
     width: 150px;
     height: 150px;
