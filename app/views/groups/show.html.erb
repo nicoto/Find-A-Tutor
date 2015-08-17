@@ -1,5 +1,28 @@
+<% @page_title = 'Tutoring Group Info' %>
+<%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
+<div>
 <h2><%= @group.name %></h2>
-<h2><%= @group.id %></h2>
-<h4><%= @group.description %></h4>
+<h5><%= @group.description %></h5>
+<strong>Tutors</strong>
+<% @group.users.where(role: 1).each do |tutor| %>
+  <img class="avatar" src=<%= Faker::Avatar.image %> />
+<% end %>
+<div class="row" style="border: solid 1px gray;">
+  <br>
+  <div class="awwpx left clearfix" style="float: left;">
+    <span class="glyphicon glyphicon-calendar"><%= link_to 'Create Session', new_event_path %></span>
+  </div>
 
-<%= link_to 'Edit', edit_group_path(@group.id) %> | <%= link_to 'Delete', group_path(@group.id), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <div class="awwpx right clearfix" style="float: right;">
+    <span class="glyphicon glyphicon-cog"> <%= link_to 'Change Settings', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' %></span>
+  </div>
+</div>
+<br>
+
+<%= link_to "Join This Group", '/',class:'btn form-control confirm' %><br>
+
+<br>
+
+<% @group.events.each do |event| %>
+  <%= event.time_start %><%= event.name %> <%= link_to '', join_event_path, class:'glyphicon glyphicon-plus-sign' %>
+<% end %>

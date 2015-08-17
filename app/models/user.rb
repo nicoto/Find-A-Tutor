@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :password, presence: { message: "Password can't be blank" }
 
-  has_and_belongs_to_many :groups, join_table: 'members'
+  has_many :members
+  has_many :groups, through: :members
   has_and_belongs_to_many :subjects, join_table: 'studies'
 
   has_many :happenings

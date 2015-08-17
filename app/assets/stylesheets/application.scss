@@ -96,3 +96,45 @@ body {
   color: white;
 }
 
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
+
+.awwpx {
+  padding-bottom: 17px;
+}
+
+.left {
+  padding-left: 15px;
+}
+
+.right {
+  padding-right: 15px;
+}
+
+.avatar {
+    /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+    
+    /* make a square container */
+    width: 150px;
+    height: 150px;
+
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+}
