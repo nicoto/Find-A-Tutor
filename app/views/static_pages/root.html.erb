@@ -1,19 +1,15 @@
-<h1>Find a Tutor</h1>
-
-<a href="/student">
-  <button type="button" name="button">I need tutoring</button>
-</a>
-
-<a href="/tutor">
-  <button type="button" name="button">I want to be a tutor</button>
-</a>
+<% @page_title = 'Find a Tutor' %>
+<%= render partial: 'layouts/header', locals: {page_title: @page_title} %>
 
 <br>
-<%= link_to "New Event", new_event_path, class:"btn btn-primary"  %>
-<%= link_to "New Location", new_location_path, class:"btn btn-primary"  %>
-<%= link_to "New Group", new_group_path, class:"btn btn-primary"  %>
-<%= link_to "New User", new_user_path, class:"btn btn-primary"  %>
+<br>
 
+<%= link_to "I need tutoring", new_user_path, class:"btn btn-primary"  %>
+<br>
+<br>
+<%= link_to "I want to be a tutor", new_user_path, class:"btn btn-primary"  %>
+<br>
+<br>
 <a href="/login">
-  <button type="button" name="button">Sign In</button>
+  <button type="button" class="btn btn-default" name="button">Sign In</button>
 </a>
